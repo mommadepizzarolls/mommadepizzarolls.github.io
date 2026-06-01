@@ -25,52 +25,50 @@ body{
 
 .container{
     text-align:center;
-    padding:20px;
-    max-width:1100px;
-    position:relative;
-    z-index:10;
+    padding:10px;
+    max-width:800px;
 }
 
 .shrek{
-    width:600px;
-    max-width:95vw;
+    width:350px;
+    max-width:80vw;
     margin-bottom:10px;
 
     filter:
-        drop-shadow(0 0 25px rgba(255,255,255,0.5))
-        drop-shadow(0 0 40px hotpink);
+        drop-shadow(0 0 20px rgba(255,255,255,0.5))
+        drop-shadow(0 0 30px hotpink);
 }
 
 h1{
     color:white;
-    font-size:3rem;
+    font-size:2rem;
     text-shadow:
         0 0 8px #00ff66,
         0 0 16px #00ff66,
         3px 3px 0 #000;
-    margin-bottom:8px;
+    margin-bottom:10px;
+    line-height:1.2;
 }
 
 .subtitle{
     color:white;
-    font-size:1.8rem;
+    font-size:1.2rem;
     text-shadow:2px 2px 0 #000;
-    margin-bottom:40px;
+    margin-bottom:20px;
 }
 
 .buttons{
     display:flex;
     justify-content:center;
-    gap:25px;
-    position:relative;
+    gap:20px;
     flex-wrap:wrap;
 }
 
 button{
     border:none;
     border-radius:18px;
-    padding:18px 42px;
-    font-size:1.4rem;
+    padding:12px 28px;
+    font-size:1rem;
     cursor:pointer;
     transition:0.2s;
     font-weight:bold;
@@ -95,12 +93,12 @@ button{
 }
 
 .success h1{
-    font-size:4rem;
+    font-size:3rem;
 }
 
 .success p{
     color:white;
-    font-size:2rem;
+    font-size:1.5rem;
     text-shadow:2px 2px 0 #000;
     margin-top:20px;
 }
@@ -109,10 +107,10 @@ button{
     display:inline-block;
     margin-top:20px;
     color:white;
-    font-size:2rem;
+    font-size:1.5rem;
     text-decoration:none;
     background:#00c853;
-    padding:15px 25px;
+    padding:12px 20px;
     border-radius:15px;
     transition:0.2s;
 }
@@ -157,8 +155,12 @@ button{
         text me :)
     </p>
 
-    <a class="insta" href="https://www.instagram.com/__royale.with.cheese__/" target="_blank">
-        @insta
+    <a
+        class="insta"
+        href="https://www.instagram.com/__royale.with.cheese__/"
+        target="_blank"
+    >
+        @__royale.with.cheese__
     </a>
 
 </div>
@@ -176,7 +178,7 @@ document.addEventListener("mousemove", (e) => {
 
     const distance = Math.sqrt(dx * dx + dy * dy);
 
-    if(distance < 140){
+    if(distance < 120){
 
         const maxX = window.innerWidth - rect.width;
         const maxY = window.innerHeight - rect.height;
