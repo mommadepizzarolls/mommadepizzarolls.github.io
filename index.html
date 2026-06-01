@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Important Swamp Business</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    background:#ff69b4;
+    font-family:"Comic Sans MS", cursive, sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    position:relative;
+}
+
+.container{
+    text-align:center;
+    padding:20px;
+    max-width:1100px;
+    position:relative;
+    z-index:10;
+}
+
+.shrek{
+    width:600px;
+    max-width:95vw;
+    margin-bottom:10px;
+
+    filter:
+        drop-shadow(0 0 25px rgba(255,255,255,0.5))
+        drop-shadow(0 0 40px hotpink);
+}
+
+h1{
+    color:white;
+    font-size:3rem;
+    text-shadow:
+        0 0 8px #00ff66,
+        0 0 16px #00ff66,
+        3px 3px 0 #000;
+    margin-bottom:8px;
+}
+
+.subtitle{
+    color:white;
+    font-size:1.8rem;
+    text-shadow:2px 2px 0 #000;
+    margin-bottom:40px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    position:relative;
+    flex-wrap:wrap;
+}
+
+button{
+    border:none;
+    border-radius:18px;
+    padding:18px 42px;
+    font-size:1.4rem;
+    cursor:pointer;
+    transition:0.2s;
+    font-weight:bold;
+}
+
+#yesBtn{
+    background:#3cff7a;
+}
+
+#yesBtn:hover{
+    transform:scale(1.08);
+}
+
+#noBtn{
+    background:#1f9e52;
+    color:white;
+    position:relative;
+}
+
+.success{
+    display:none;
+}
+
+.success h1{
+    font-size:4rem;
+}
+
+.success p{
+    color:white;
+    font-size:2rem;
+    text-shadow:2px 2px 0 #000;
+    margin-top:20px;
+}
+
+.insta{
+    display:inline-block;
+    margin-top:20px;
+    color:white;
+    font-size:2rem;
+    text-decoration:none;
+    background:#00c853;
+    padding:15px 25px;
+    border-radius:15px;
+    transition:0.2s;
+}
+
+.insta:hover{
+    transform:scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="mainPage">
+
+    <img src="shrek.png" class="shrek" alt="Shrek">
+
+    <h1>
+        What are you doing in my swamp?<br>
+        More importantly, what are you doing this weekend?
+    </h1>
+
+    <p class="subtitle">
+        me, you, Burger Factory next week? 🥺
+    </p>
+
+    <div class="buttons">
+        <button id="yesBtn">💚 Yes</button>
+        <button id="noBtn">💔 No</button>
+    </div>
+
+</div>
+
+<div class="container success" id="successPage">
+
+    <img src="shrek.png" class="shrek" alt="Shrek">
+
+    <h1>YAYYYY 💚</h1>
+
+    <p>
+        Happily Ever After unlocked.
+        <br><br>
+        text me :)
+    </p>
+
+    <a class="insta" href="https://www.instagram.com/__royale.with.cheese__/" target="_blank">
+        @YOUR_USERNAME
+    </a>
+
+</div>
+
+<script>
+
+const noBtn = document.getElementById("noBtn");
+
+document.addEventListener("mousemove", (e) => {
+
+    const rect = noBtn.getBoundingClientRect();
+
+    const dx = e.clientX - (rect.left + rect.width / 2);
+    const dy = e.clientY - (rect.top + rect.height / 2);
+
+    const distance = Math.sqrt(dx * dx + dy * dy);
+
+    if(distance < 140){
+
+        const maxX = window.innerWidth - rect.width;
+        const maxY = window.innerHeight - rect.height;
+
+        noBtn.style.position = "fixed";
+        noBtn.style.left = Math.random() * maxX + "px";
+        noBtn.style.top = Math.random() * maxY + "px";
+    }
+});
+
+document.getElementById("yesBtn").addEventListener("click", () => {
+
+    document.getElementById("mainPage").style.display = "none";
+    document.getElementById("successPage").style.display = "block";
+
+});
+
+</script>
+
+</body>
+</html>
